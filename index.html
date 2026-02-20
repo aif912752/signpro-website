@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SignPro — ผู้เชี่ยวชาญป้ายโฆษณาครบวงจร</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700;900&family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.min.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ===== NAV ===== -->
+<nav id="navbar">
+  <div class="logo" onclick="navigate('home')">Sign<span>Pro</span></div>
+  <ul class="nav-links">
+    <li><a onclick="navigate('home')" data-page="home">หน้าแรก</a></li>
+    <li><a onclick="navigate('services')" data-page="services">บริการ</a></li>
+    <li><a onclick="navigate('about')" data-page="about">เกี่ยวกับเรา</a></li>
+    <li><a onclick="navigate('contact')" data-page="contact" class="nav-cta">ขอใบเสนอราคา</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile overlay + drawer -->
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMenu()"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+  <ul class="mobile-nav-links">
+    <li><a onclick="navigate('home');closeMenu()" data-page="home">หน้าแรก</a></li>
+    <li><a onclick="navigate('services');closeMenu()" data-page="services">บริการ</a></li>
+    <li><a onclick="navigate('about');closeMenu()" data-page="about">เกี่ยวกับเรา</a></li>
+    <li><a onclick="navigate('contact');closeMenu()" class="m-cta">ขอใบเสนอราคา</a></li>
+  </ul>
+</div>
+
+<!-- ============================= PAGE: HOME ============================= -->
+<div class="page active" id="page-home">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-stripe"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span class="dot"></span>ครบวงจร · คุณภาพสูง · ส่งไวจริง</div>
+      <h1 class="hero-h1">
+        ป้ายโฆษณา
+        <span class="accent">ที่ทำให้</span>
+        <span class="stroke">แบรนด์คุณ</span>
+        โดดเด่น
+      </h1>
+      <p class="hero-sub">รับผลิตและติดตั้งป้ายโฆษณาทุกชนิด ตั้งแต่งานขนาดเล็กจนถึงโปรเจกต์ใหญ่ ทั้งภายในและภายนอกอาคาร ดูแลครบทุกขั้นตอน</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="navigate('contact')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 4.93 2 2 0 0 1 3.6 2.76h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 17.5z"/></svg>
+          รับใบเสนอราคา
+        </button>
+        <button class="btn-ghost" onclick="navigate('services')">ดูบริการทั้งหมด →</button>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-avatars">
+          <div class="trust-avatar">ก</div>
+          <div class="trust-avatar">พ</div>
+          <div class="trust-avatar">ส</div>
+        </div>
+        <div class="trust-text"><strong>200+ ลูกค้า</strong> ไว้วางใจเราแล้ว</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="mockup-frame">
+        <div class="glow-bar h"></div>
+        <div class="glow-bar v"></div>
+        <div class="mockup-inner">
+          <div class="mockup-text">YOUR<br>BRAND</div>
+          <div class="mockup-sub">Premium Sign</div>
+        </div>
+        <div class="float-badge t"><span class="bdot"></span>ผลิต + ติดตั้ง</div>
+        <div class="float-badge b"><span class="bdot"></span>ส่งงานตรงเวลา</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <div class="marquee-item">ป้ายหน้าร้าน <span class="marquee-sep">✦</span> ป้ายไฟ LED <span class="marquee-sep">✦</span> สติ๊กเกอร์ Indoor/Outdoor <span class="marquee-sep">✦</span> บิลบอร์ด <span class="marquee-sep">✦</span> ไวนิล Inkjet <span class="marquee-sep">✦</span> Roll Up Banner <span class="marquee-sep">✦</span> Backdrop <span class="marquee-sep">✦</span> ชั้นวางสินค้า <span class="marquee-sep">✦</span></div>
+      <div class="marquee-item">ป้ายหน้าร้าน <span class="marquee-sep">✦</span> ป้ายไฟ LED <span class="marquee-sep">✦</span> สติ๊กเกอร์ Indoor/Outdoor <span class="marquee-sep">✦</span> บิลบอร์ด <span class="marquee-sep">✦</span> ไวนิล Inkjet <span class="marquee-sep">✦</span> Roll Up Banner <span class="marquee-sep">✦</span> Backdrop <span class="marquee-sep">✦</span> ชั้นวางสินค้า <span class="marquee-sep">✦</span></div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="home-stats">
+    <div class="hstat reveal"><div class="hstat-num" data-target="500">0</div><div class="hstat-label">โปรเจกต์ที่ผ่านมา</div></div>
+    <div class="hstat reveal rd1"><div class="hstat-num" data-target="200">0</div><div class="hstat-label">ลูกค้าที่ไว้วางใจ</div></div>
+    <div class="hstat reveal rd2"><div class="hstat-num" data-target="10">0</div><div class="hstat-label">ปีประสบการณ์</div></div>
+    <div class="hstat reveal rd3"><div class="hstat-num" data-target="24">0</div><div class="hstat-label">ชม. ตอบสนองด่วน</div></div>
+  </div>
+
+  <!-- Services preview -->
+  <section class="home-services">
+    <div class="reveal">
+      <div class="section-label">บริการของเรา</div>
+      <h2 class="section-title">ครอบคลุมทุกงาน<br><span class="dim">ป้ายและโฆษณา</span></h2>
+    </div>
+    <div class="home-services-grid">
+      <div class="svc-card reveal rd1" onclick="navigate('services')">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg></div>
+        <div class="svc-name">สติ๊กเกอร์ครบทุกประเภท</div>
+        <p class="svc-desc">Indoor / Outdoor ทนแดด ทนฝน ติดสินค้า กระจก ผนัง พิมพ์คมชัดสีสวย</p>
+        <div class="svc-arrow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="svc-card reveal rd2" onclick="navigate('services')">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+        <div class="svc-name">ป้ายโฆษณาทุกชนิด</div>
+        <p class="svc-desc">ป้ายหน้าร้าน ป้ายไฟ LED บิลบอร์ด อะคริลิก ออกแบบ ผลิต ติดตั้ง ครบ</p>
+        <div class="svc-arrow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="svc-card reveal rd3" onclick="navigate('services')">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg></div>
+        <div class="svc-name">ไวนิล Inkjet</div>
+        <p class="svc-desc">พิมพ์ขนาดใหญ่ โปรโมชั่น ประชาสัมพันธ์ คัดเอาท์ แบนเนอร์ ไวนิลกิจกรรม</p>
+        <div class="svc-arrow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="svc-card reveal rd1" onclick="navigate('services')">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="svc-name">ออกบูธและอีเวนต์</div>
+        <p class="svc-desc">ชั้นวางสินค้า Roll Up Backdrop X-stand งานครบ ส่งและติดตั้งถึงหน้างาน</p>
+        <div class="svc-arrow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="svc-card reveal rd2" onclick="navigate('services')">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <div class="svc-name">ออกแบบกราฟิก</div>
+        <p class="svc-desc">ทีมดีไซน์เนอร์ช่วยออกแบบ แค่แจ้งโจทย์ ดูตั้งแต่แบบจนถึงหน้างาน</p>
+        <div class="svc-arrow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+      <div class="svc-card reveal rd3" onclick="navigate('services')">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+        <div class="svc-name">ติดตั้งหน้างาน</div>
+        <p class="svc-desc">ทีมช่างมืออาชีพ ทั้งในและนอกอาคาร งานสูง งานใหญ่ ดูแลได้ มั่นใจทุกงาน</p>
+        <div class="svc-arrow"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="home-why">
+    <div>
+      <div class="reveal">
+        <div class="section-label">ทำไมต้องเรา</div>
+        <h2 class="section-title">จุดเด่นที่<br>ลูกค้าเลือก</h2>
+      </div>
+      <div class="why-pts">
+        <div class="why-pt reveal rd1">
+          <div class="why-pt-icon"><svg viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+          <div><div class="why-pt-title">สีตรงแบบทุกงาน</div><p class="why-pt-desc">Color Management มาตรฐาน ผลลัพธ์ตรง Artwork ทุกครั้ง</p></div>
+        </div>
+        <div class="why-pt reveal rd2">
+          <div class="why-pt-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <div><div class="why-pt-title">ผลิตไว ส่งตรงเวลา</div><p class="why-pt-desc">โรงงานผลิตเอง ควบคุมเวลาได้ รับงานด่วนได้</p></div>
+        </div>
+        <div class="why-pt reveal rd3">
+          <div class="why-pt-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+          <div><div class="why-pt-title">มีทีมติดตั้งครบ</div><p class="why-pt-desc">ไม่ต้องหาช่างเอง จัดการตั้งแต่ผลิตจนติดตั้งเสร็จ</p></div>
+        </div>
+        <div class="why-pt reveal rd4">
+          <div class="why-pt-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div><div class="why-pt-title">ดูแลครบ จบในที่เดียว</div><p class="why-pt-desc">แจ้งโจทย์ได้เลย ออกแบบ ผลิต ติดตั้ง ดูแลทุกขั้นตอน</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal rd2">
+      <div class="color-board">
+        <div class="cb cb1"><div class="cb1-text">SIGN<br>PRO</div><div class="cb1-sub">QUALITY FIRST</div></div>
+        <div class="cb cb2"></div>
+        <div class="cb cb3"></div>
+        <div class="cb cb4"></div>
+        <div class="cb cb5"></div>
+        <div class="cb cb6"></div>
+        <div class="cb cb7"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="home-testi">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center">รีวิวจากลูกค้า</div>
+      <h2 class="section-title">ลูกค้าพูดถึงเรา</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="tcard feat reveal rd1">
+        <div class="qm">"</div>
+        <div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="txt">ทำป้ายหน้าร้านกับที่นี่มาหลายชิ้น งานออกมาดีมาก สีตรงกับแบบทุกครั้ง ทีมงานพูดคุยง่าย ติดตั้งเสร็จตรงเวลา ประทับใจมากครับ</p>
+        <div class="auth"><div class="ava">ก</div><div><div class="aname">คุณกิตติ์</div><div class="arole">เจ้าของร้านอาหาร · กรุงเทพฯ</div></div></div>
+      </div>
+      <div class="tcard reveal rd2">
+        <div class="qm">"</div>
+        <div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="txt">สั่งไวนิลและ Roll Up สำหรับออกบูธ ส่งมาตรงเวลา คุณภาพดีเกินคาด สีสวยคมชัด จะกลับมาใช้บริการอีกแน่นอนค่ะ</p>
+        <div class="auth"><div class="ava" style="background:#c33a00">พ</div><div><div class="aname">คุณพิมพ์</div><div class="arole">ฝ่ายการตลาด · บริษัทเอกชน</div></div></div>
+      </div>
+      <div class="tcard reveal rd3">
+        <div class="qm">"</div>
+        <div class="stars"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <p class="txt">สติ๊กเกอร์ Outdoor ติดรถ สีทนมาก ไม่ซีดแม้ตากแดดหลายเดือน ราคาสมเหตุสมผล แนะนำเลยครับ</p>
+        <div class="auth"><div class="ava" style="background:#7a2400">ส</div><div><div class="aname">คุณสมชาย</div><div class="arole">เจ้าของธุรกิจขนส่ง</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <div class="cta-banner reveal">
+    <div>
+      <div class="cta-banner-title">พร้อมเริ่มโปรเจกต์ของคุณแล้วหรือยัง?</div>
+      <div class="cta-banner-sub">แจ้งโจทย์ได้เลย ทีมเราตอบกลับภายใน 24 ชั่วโมง ไม่มีค่าใช้จ่ายในการสอบถาม</div>
+    </div>
+    <button class="btn-white" onclick="navigate('contact')">ขอใบเสนอราคา →</button>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo">Sign<span>Pro</span></span>
+        <p class="footer-brand-desc">ผู้เชี่ยวชาญรับผลิตและติดตั้งป้ายโฆษณาครบวงจร ทั้งภายในและภายนอกอาคาร ดูแลทุกขั้นตอน</p>
+        <div class="footer-socials">
+          <div class="fsocial"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+          <div class="fsocial"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+          <div class="fsocial"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>บริการ</h4>
+        <ul>
+          <li><a onclick="navigate('services')">สติ๊กเกอร์</a></li>
+          <li><a onclick="navigate('services')">ป้ายโฆษณา</a></li>
+          <li><a onclick="navigate('services')">ไวนิล Inkjet</a></li>
+          <li><a onclick="navigate('services')">งานอีเวนต์</a></li>
+          <li><a onclick="navigate('services')">ออกแบบกราฟิก</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>เมนู</h4>
+        <ul>
+          <li><a onclick="navigate('home')">หน้าแรก</a></li>
+          <li><a onclick="navigate('services')">บริการ</a></li>
+          <li><a onclick="navigate('about')">เกี่ยวกับเรา</a></li>
+          <li><a onclick="navigate('contact')">ติดต่อเรา</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>ติดต่อ</h4>
+        <ul>
+          <li><a>LINE: @signpro</a></li>
+          <li><a>Tel: 02-XXX-XXXX</a></li>
+          <li><a>hello@signpro.co.th</a></li>
+          <li><a>กรุงเทพมหานคร</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 SignPro · All rights reserved.</div>
+      <div class="footer-badge"><span class="badge-dot"></span>พร้อมรับงานตลอดเวลา</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ============================= PAGE: SERVICES ============================= -->
+<div class="page" id="page-services">
+  <div class="page-hero">
+    <div class="reveal"><div class="section-label">บริการของเรา</div></div>
+    <div class="page-hero-inner">
+      <h1 class="reveal rd1">ทุกงานป้าย<br><span style="color:var(--orange)">เราทำได้ครบ</span></h1>
+      <p class="page-hero-sub reveal rd2">ตั้งแต่สติ๊กเกอร์ชิ้นเดียวไปจนถึงโปรเจกต์บิลบอร์ดขนาดใหญ่ ทีมงานของเราพร้อมดูแลทุกขั้นตอน ออกแบบ ผลิต ติดตั้ง ครบจบในที่เดียว</p>
+    </div>
+  </div>
+
+  <!-- Service blocks -->
+  <div class="services-detail">
+
+    <div class="service-block reveal">
+      <div>
+        <div class="sb-label">บริการที่ 01</div>
+        <h2 class="sb-title">สติ๊กเกอร์<br>ครบทุกประเภท</h2>
+        <p class="sb-desc">พิมพ์สติ๊กเกอร์คุณภาพสูง ทั้งสำหรับใช้งานภายในและภายนอกอาคาร วัสดุทนทาน ทนต่อแสงแดด ความชื้น และสภาพอากาศ พิมพ์สีสด คมชัด ตรงแบบทุกครั้ง</p>
+        <div class="sb-features">
+          <div class="sb-feature">สติ๊กเกอร์ Indoor / Outdoor</div>
+          <div class="sb-feature">สติ๊กเกอร์ติดสินค้า / Label</div>
+          <div class="sb-feature">สติ๊กเกอร์ติดกระจก (One Way Vision)</div>
+          <div class="sb-feature">สติ๊กเกอร์ติดผนัง / ตกแต่งร้าน</div>
+          <div class="sb-feature">สติ๊กเกอร์ติดรถ Vinyl Wrap</div>
+        </div>
+        <button class="btn-primary" onclick="navigate('contact')">สอบถามราคา →</button>
+      </div>
+      <div class="sb-visual">
+        <div class="sbv-art" style="background:linear-gradient(135deg,#1a1a1a,#2a1400)">
+          <div class="sbv-art-text" style="font-size:5rem">STICKER</div>
+        </div>
+        <div class="sbv-badge"><span class="bdot"></span>Indoor / Outdoor</div>
+      </div>
+    </div>
+
+    <div class="service-block flip reveal">
+      <div>
+        <div class="sb-label">บริการที่ 02</div>
+        <h2 class="sb-title">ป้ายโฆษณา<br>ทุกชนิด</h2>
+        <p class="sb-desc">ผลิตป้ายโฆษณาทุกรูปแบบ ทั้งป้ายหน้าร้าน ป้ายไฟ LED และป้ายบิลบอร์ดขนาดใหญ่ ใช้วัสดุคุณภาพสูง คงทน สวยงาม มีทีมช่างติดตั้งมืออาชีพ</p>
+        <div class="sb-features">
+          <div class="sb-feature">ป้ายหน้าร้านอะคริลิก</div>
+          <div class="sb-feature">ป้ายไฟ LED / Neon Sign</div>
+          <div class="sb-feature">ป้ายบิลบอร์ดขนาดใหญ่</div>
+          <div class="sb-feature">ป้ายโฟมตัวอักษร 3 มิติ</div>
+          <div class="sb-feature">ป้ายทางออก / ป้ายนำทาง</div>
+        </div>
+        <button class="btn-primary" onclick="navigate('contact')">สอบถามราคา →</button>
+      </div>
+      <div class="sb-visual">
+        <div class="sbv-art" style="background:linear-gradient(135deg,#1a0a00,var(--orange))">
+          <div class="sbv-art-text" style="font-size:4rem;color:rgba(255,255,255,.12)">LED SIGN</div>
+        </div>
+        <div class="sbv-badge"><span class="bdot"></span>LED · อะคริลิก · บิลบอร์ด</div>
+      </div>
+    </div>
+
+    <div class="service-block reveal">
+      <div>
+        <div class="sb-label">บริการที่ 03</div>
+        <h2 class="sb-title">ไวนิล Inkjet<br>พิมพ์ขนาดใหญ่</h2>
+        <p class="sb-desc">พิมพ์ไวนิล Inkjet คุณภาพสูงสำหรับงานโฆษณา โปรโมชั่น และกิจกรรมต่างๆ ภาพคมชัด สีสดใส ไม่ซีดจาง พิมพ์ได้ทุกขนาดตามต้องการ</p>
+        <div class="sb-features">
+          <div class="sb-feature">แบนเนอร์โปรโมชั่น</div>
+          <div class="sb-feature">คัดเอาท์ / ป้ายตั้งพื้น</div>
+          <div class="sb-feature">ผ้าใบ / ฟลายเออร์</div>
+          <div class="sb-feature">ไวนิลตกแต่งอาคาร</div>
+          <div class="sb-feature">งาน Mesh / Perforated</div>
+        </div>
+        <button class="btn-primary" onclick="navigate('contact')">สอบถามราคา →</button>
+      </div>
+      <div class="sb-visual">
+        <div class="sbv-art" style="background:linear-gradient(135deg,#0a0a1a,#ff4500,#ffd000)">
+          <div class="sbv-art-text" style="font-size:4.5rem">VINYL</div>
+        </div>
+        <div class="sbv-badge"><span class="bdot"></span>Inkjet · Full Color</div>
+      </div>
+    </div>
+
+    <div class="service-block flip reveal">
+      <div>
+        <div class="sb-label">บริการที่ 04</div>
+        <h2 class="sb-title">งานออกบูธ<br>และอีเวนต์</h2>
+        <p class="sb-desc">บริการครบวงจรสำหรับการออกบูธและอีเวนต์ ตั้งแต่ออกแบบ ผลิต ไปจนถึงขนส่งและติดตั้งในวันงาน พร้อมรื้อถอนหลังงานเสร็จ</p>
+        <div class="sb-features">
+          <div class="sb-feature">Roll Up Banner</div>
+          <div class="sb-feature">Backdrop / Photo Wall</div>
+          <div class="sb-feature">X-Stand / L-Stand</div>
+          <div class="sb-feature">ชั้นวางสินค้า / Display</div>
+          <div class="sb-feature">Pop-up Counter</div>
+        </div>
+        <button class="btn-primary" onclick="navigate('contact')">สอบถามราคา →</button>
+      </div>
+      <div class="sb-visual">
+        <div class="sbv-art" style="background:linear-gradient(135deg,#111,#222)">
+          <div class="sbv-art-text" style="font-size:3.5rem">EVENT BOOTH</div>
+        </div>
+        <div class="sbv-badge"><span class="bdot"></span>ออกบูธ · อีเวนต์</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Pricing -->
+  <section class="svc-pricing">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center">แพ็กเกจบริการ</div>
+      <h2 class="section-title">เลือกแพ็กเกจ<br><span class="dim">ที่เหมาะกับคุณ</span></h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal rd1">
+        <div class="price-tier">Starter</div>
+        <div class="price-name">งานเล็ก / ชิ้นเดียว</div>
+        <div class="price-amount">ราคาตาม</div>
+        <div class="price-unit">ขนาดและจำนวนที่สั่ง · ไม่มีขั้นต่ำ</div>
+        <div class="price-divider"></div>
+        <div class="price-features">
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>สั่งได้ตั้งแต่ 1 ชิ้น</div>
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>ออกแบบช่วยเหลือได้</div>
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>ส่งงานภายใน 3-5 วัน</div>
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>จัดส่งทั่วประเทศ</div>
+        </div>
+        <button class="btn-ghost" style="width:100%;justify-content:center" onclick="navigate('contact')">ขอใบเสนอราคา</button>
+      </div>
+      <div class="price-card popular reveal rd2">
+        <div class="popular-tag">ยอดนิยม</div>
+        <div class="price-tier">Business</div>
+        <div class="price-name">งานโปรเจกต์ / ธุรกิจ</div>
+        <div class="price-amount">ราคาพิเศษ</div>
+        <div class="price-unit">สำหรับงานจำนวนมาก · มีส่วนลด</div>
+        <div class="price-divider"></div>
+        <div class="price-features">
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>ทุกอย่างใน Starter</div>
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>ส่วนลดตามจำนวน</div>
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>ทีมออกแบบเฉพาะทาง</div>
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Priority ผลิตก่อน</div>
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>มีทีมติดตั้ง</div>
+        </div>
+        <button class="btn-primary" style="width:100%;justify-content:center" onclick="navigate('contact')">ขอใบเสนอราคา</button>
+      </div>
+      <div class="price-card reveal rd3">
+        <div class="price-tier">Enterprise</div>
+        <div class="price-name">งานองค์กร / โปรเจกต์ใหญ่</div>
+        <div class="price-amount">Custom</div>
+        <div class="price-unit">ราคาพิเศษตามขอบเขตงาน</div>
+        <div class="price-divider"></div>
+        <div class="price-features">
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>ทุกอย่างใน Business</div>
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Account Manager เฉพาะ</div>
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>งานด่วน 24 ชั่วโมง</div>
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>ติดตั้งทั่วประเทศ</div>
+          <div class="price-feature"><span class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>รับประกันคุณภาพ</div>
+        </div>
+        <button class="btn-ghost" style="width:100%;justify-content:center" onclick="navigate('contact')">ติดต่อเรา</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand"><span class="logo">Sign<span>Pro</span></span><p class="footer-brand-desc">ผู้เชี่ยวชาญรับผลิตและติดตั้งป้ายโฆษณาครบวงจร</p></div>
+      <div class="footer-col"><h4>บริการ</h4><ul><li><a onclick="navigate('services')">สติ๊กเกอร์</a></li><li><a onclick="navigate('services')">ป้ายโฆษณา</a></li><li><a onclick="navigate('services')">ไวนิล Inkjet</a></li><li><a onclick="navigate('services')">งานอีเวนต์</a></li></ul></div>
+      <div class="footer-col"><h4>เมนู</h4><ul><li><a onclick="navigate('home')">หน้าแรก</a></li><li><a onclick="navigate('about')">เกี่ยวกับเรา</a></li><li><a onclick="navigate('contact')">ติดต่อเรา</a></li></ul></div>
+      <div class="footer-col"><h4>ติดต่อ</h4><ul><li><a>LINE: @signpro</a></li><li><a>Tel: 02-XXX-XXXX</a></li><li><a>hello@signpro.co.th</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© 2025 SignPro · All rights reserved.</div><div class="footer-badge"><span class="badge-dot"></span>พร้อมรับงานตลอดเวลา</div></div>
+  </footer>
+</div>
+
+<!-- ============================= PAGE: ABOUT ============================= -->
+<div class="page" id="page-about">
+  <div class="about-hero">
+    <div class="about-hero-left">
+      <div class="reveal"><div class="section-label">เกี่ยวกับเรา</div></div>
+      <h1 class="reveal rd1">กว่า 10 ปี<br><span style="color:var(--orange)">ที่เราสร้าง</span><br>งานคุณภาพ</h1>
+      <p class="reveal rd2">SignPro ก่อตั้งขึ้นด้วยความมุ่งมั่นที่จะเป็นผู้ให้บริการด้านป้ายโฆษณาที่ครบวงจรและน่าเชื่อถือที่สุด เราเชื่อว่าป้ายที่ดีไม่ใช่แค่ข้อความ แต่คือตัวแทนของแบรนด์คุณ</p>
+      <div class="hero-actions reveal rd3" style="margin-top:1.8rem">
+        <button class="btn-primary" onclick="navigate('contact')">ร่วมงานกับเรา</button>
+        <button class="btn-ghost" onclick="navigate('services')">ดูบริการ</button>
+      </div>
+    </div>
+    <div class="about-visual reveal rd2">
+      <div class="av-main">
+        <div class="av-main-text">10+</div>
+        <div class="av-main-sub">YEARS OF<br>EXCELLENCE</div>
+      </div>
+      <div class="av-card">
+        <div class="av-card-num">500+</div>
+        <div class="av-card-label">โปรเจกต์สำเร็จ</div>
+      </div>
+      <div class="av-badge2">🏆 คุณภาพมาตรฐาน ISO</div>
+    </div>
+  </div>
+
+  <!-- Values -->
+  <section class="about-values">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center">ค่านิยมองค์กร</div>
+      <h2 class="section-title">สิ่งที่เรายึดมั่น</h2>
+    </div>
+    <div class="values-grid">
+      <div class="val-card reveal rd1"><div class="val-num">01</div><div class="val-title">คุณภาพไม่มีข้อแม้</div><p class="val-desc">ทุกงานที่ออกจากโรงงานเรา ผ่านการตรวจสอบมาตรฐานก่อนส่งถึงมือลูกค้าทุกครั้ง</p></div>
+      <div class="val-card reveal rd2"><div class="val-num">02</div><div class="val-title">ตรงเวลาเสมอ</div><p class="val-desc">เราให้ความสำคัญกับเวลาของลูกค้า ส่งงานตรงกำหนด ไม่มีข้อแก้ตัว</p></div>
+      <div class="val-card reveal rd3"><div class="val-num">03</div><div class="val-title">โปร่งใส ซื่อสัตย์</div><p class="val-desc">ราคาชัดเจน ไม่มีค่าใช้จ่ายซ่อนเร้น บอกตรงๆ ทุกขั้นตอน</p></div>
+      <div class="val-card reveal rd4"><div class="val-num">04</div><div class="val-title">ใส่ใจลูกค้า</div><p class="val-desc">ทีมงานพร้อมให้คำปรึกษา ตอบคำถาม และแก้ปัญหาให้เร็วที่สุด</p></div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="about-team">
+    <div class="reveal">
+      <div class="section-label">ทีมงานของเรา</div>
+      <h2 class="section-title">คนที่อยู่<br><span class="dim">เบื้องหลังงานดี</span></h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal rd1">
+        <div class="team-photo" style="background:linear-gradient(135deg,#1a0a00,var(--orange))">
+          <div class="team-photo-art">CEO</div>
+          <div class="team-avatar">ว</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">วิชัย ลิมปิทิพย์</div>
+          <div class="team-role">CEO & Co-Founder</div>
+          <p class="team-bio">ประสบการณ์กว่า 15 ปีในอุตสาหกรรมป้ายโฆษณา ผู้ก่อตั้ง SignPro ด้วยวิสัยทัศน์ในการสร้างมาตรฐานใหม่ให้วงการ</p>
+        </div>
+      </div>
+      <div class="team-card reveal rd2">
+        <div class="team-photo" style="background:linear-gradient(135deg,#0a1a00,#2a6000)">
+          <div class="team-photo-art">DSN</div>
+          <div class="team-avatar" style="background:#2a6000">น</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">นภัส สุขสันต์</div>
+          <div class="team-role">Head of Design</div>
+          <p class="team-bio">นักออกแบบกราฟิกมืออาชีพ จบการศึกษาจากคณะมัณฑนศิลป์ ดูแลงานออกแบบให้ทุก output ออกมาสวยงามและตรงโจทย์</p>
+        </div>
+      </div>
+      <div class="team-card reveal rd3">
+        <div class="team-photo" style="background:linear-gradient(135deg,#00101a,#004a6e)">
+          <div class="team-photo-art">OPS</div>
+          <div class="team-avatar" style="background:#004a6e">ป</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">ประยุทธ์ แก้วมณี</div>
+          <div class="team-role">Operations Manager</div>
+          <p class="team-bio">ดูแลกระบวนการผลิตและทีมติดตั้งทั้งหมด ประสบการณ์ช่างติดตั้งป้ายกว่า 12 ปี มั่นใจได้ว่างานออกมาสมบูรณ์แบบ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="about-timeline">
+    <div class="reveal">
+      <div class="section-label">ประวัติบริษัท</div>
+      <h2 class="section-title">เส้นทาง<br><span class="dim">10 ปีของเรา</span></h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal rd1">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2558</div>
+        <div class="tl-title">ก่อตั้ง SignPro</div>
+        <p class="tl-desc">เริ่มต้นเป็นร้านเล็กๆ รับทำสติ๊กเกอร์และป้ายหน้าร้าน ด้วยทีมงาน 3 คน</p>
+      </div>
+      <div class="tl-item reveal rd2">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2561</div>
+        <div class="tl-title">ขยายโรงงาน</div>
+        <p class="tl-desc">ย้ายสู่โรงงานขนาดใหญ่ นำเครื่องพิมพ์ Inkjet ขนาดใหญ่มาให้บริการ รองรับงานมากขึ้น</p>
+      </div>
+      <div class="tl-item reveal rd3">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2563</div>
+        <div class="tl-title">เพิ่มบริการติดตั้ง</div>
+        <p class="tl-desc">เปิดทีมช่างติดตั้งเป็นของตัวเอง ให้บริการครบวงจรตั้งแต่ผลิตจนถึงติดตั้งหน้างาน</p>
+      </div>
+      <div class="tl-item reveal rd4">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2566</div>
+        <div class="tl-title">500+ โปรเจกต์</div>
+        <p class="tl-desc">ก้าวสู่หลักหลายร้อยโปรเจกต์ มีลูกค้าประจำมากกว่า 200 ราย จากทั่วประเทศ</p>
+      </div>
+      <div class="tl-item reveal rd5">
+        <div class="tl-dot"></div>
+        <div class="tl-year">ปัจจุบัน</div>
+        <div class="tl-title">ก้าวต่อไป</div>
+        <p class="tl-desc">มุ่งมั่นพัฒนาคุณภาพงานและบริการอย่างต่อเนื่อง เพื่อเป็นตัวเลือกอันดับ 1 ด้านป้ายโฆษณา</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand"><span class="logo">Sign<span>Pro</span></span><p class="footer-brand-desc">ผู้เชี่ยวชาญรับผลิตและติดตั้งป้ายโฆษณาครบวงจร</p></div>
+      <div class="footer-col"><h4>บริการ</h4><ul><li><a onclick="navigate('services')">สติ๊กเกอร์</a></li><li><a onclick="navigate('services')">ป้ายโฆษณา</a></li><li><a onclick="navigate('services')">ไวนิล Inkjet</a></li><li><a onclick="navigate('services')">งานอีเวนต์</a></li></ul></div>
+      <div class="footer-col"><h4>เมนู</h4><ul><li><a onclick="navigate('home')">หน้าแรก</a></li><li><a onclick="navigate('services')">บริการ</a></li><li><a onclick="navigate('contact')">ติดต่อเรา</a></li></ul></div>
+      <div class="footer-col"><h4>ติดต่อ</h4><ul><li><a>LINE: @signpro</a></li><li><a>Tel: 02-XXX-XXXX</a></li><li><a>hello@signpro.co.th</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© 2025 SignPro · All rights reserved.</div><div class="footer-badge"><span class="badge-dot"></span>พร้อมรับงานตลอดเวลา</div></div>
+  </footer>
+</div>
+
+<!-- ============================= PAGE: CONTACT ============================= -->
+<div class="page" id="page-contact">
+  <div class="contact-hero">
+    <div class="reveal"><div class="section-label">ติดต่อเรา</div></div>
+    <h1 class="reveal rd1">พูดคุยกับเรา<br><span style="color:var(--orange)">ได้เลยเดี๋ยวนี้</span></h1>
+    <p class="reveal rd2">แจ้งโจทย์ได้เลย ทีมเราพร้อมให้คำแนะนำและส่งใบเสนอราคาภายใน 24 ชั่วโมง ไม่มีค่าใช้จ่ายในการสอบถาม</p>
+  </div>
+
+  <div class="contact-body">
+    <!-- Form -->
+    <div class="cform reveal">
+      <div class="cform-title">ส่งโจทย์มาได้เลย</div>
+      <div class="cform-sub">กรอกรายละเอียด เราจะติดต่อกลับโดยเร็วที่สุด</div>
+      <div class="f-row">
+        <div class="f-grp"><label class="f-label">ชื่อ-นามสกุล *</label><input class="f-input" type="text" placeholder="คุณชื่ออะไร?"></div>
+        <div class="f-grp"><label class="f-label">เบอร์โทรศัพท์ *</label><input class="f-input" type="tel" placeholder="08X-XXX-XXXX"></div>
+      </div>
+      <div class="f-grp"><label class="f-label">อีเมล</label><input class="f-input" type="email" placeholder="your@email.com"></div>
+      <div class="f-grp"><label class="f-label">ชื่อบริษัท / ร้านค้า</label><input class="f-input" type="text" placeholder="(ถ้ามี)"></div>
+      <div class="f-grp">
+        <label class="f-label">ประเภทงานที่ต้องการ *</label>
+        <select class="f-select">
+          <option value="" disabled selected>เลือกประเภทงาน</option>
+          <option>สติ๊กเกอร์ Indoor / Outdoor</option>
+          <option>ป้ายหน้าร้าน / ป้ายไฟ</option>
+          <option>ป้ายบิลบอร์ด</option>
+          <option>ไวนิล Inkjet</option>
+          <option>งานออกบูธ / อีเวนต์</option>
+          <option>ออกแบบกราฟิก</option>
+          <option>ติดตั้งอย่างเดียว</option>
+          <option>อื่นๆ</option>
+        </select>
+      </div>
+      <div class="f-row">
+        <div class="f-grp">
+          <label class="f-label">งบประมาณโดยประมาณ</label>
+          <select class="f-select">
+            <option value="" disabled selected>เลือกช่วงงบ</option>
+            <option>ต่ำกว่า 5,000 บาท</option>
+            <option>5,000 – 20,000 บาท</option>
+            <option>20,000 – 50,000 บาท</option>
+            <option>50,000 – 100,000 บาท</option>
+            <option>มากกว่า 100,000 บาท</option>
+          </select>
+        </div>
+        <div class="f-grp">
+          <label class="f-label">กำหนดส่งงาน</label>
+          <input class="f-input" type="date">
+        </div>
+      </div>
+      <div class="f-grp"><label class="f-label">รายละเอียดงาน *</label><textarea class="f-textarea" placeholder="บอกขนาด จำนวน สถานที่ติดตั้ง หรือรายละเอียดอื่นๆ ที่ต้องการ..."></textarea></div>
+      <label class="f-check">
+        <input type="checkbox">
+        <span class="f-check-label">ยินยอมให้ทีมงาน SignPro ติดต่อกลับเพื่อนำเสนอบริการและใบเสนอราคา</span>
+      </label>
+      <button class="f-submit" id="submitBtn" onclick="handleSubmit()">ส่งโจทย์ให้เราดูเลย →</button>
+      <p class="f-note">ตอบกลับภายใน 24 ชั่วโมง · ไม่มีค่าใช้จ่ายในการสอบถาม</p>
+    </div>
+
+    <!-- Info panel -->
+    <div>
+      <div class="contact-info reveal rd2">
+        <div class="ci-card">
+          <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div><div class="ci-label">LINE OA</div><div class="ci-value">@signpro</div></div>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.5 19.79 19.79 0 0 1 1.61 4.93 2 2 0 0 1 3.6 2.76h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.1a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 17.5z"/></svg></div>
+          <div><div class="ci-label">โทรศัพท์</div><div class="ci-value">02-XXX-XXXX</div></div>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><div class="ci-label">อีเมล</div><div class="ci-value">hello@signpro.co.th</div></div>
+        </div>
+        <div class="ci-card">
+          <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="ci-label">ที่ตั้ง</div><div class="ci-value">กรุงเทพมหานคร</div></div>
+        </div>
+
+        <div class="ci-hours">
+          <div class="ci-hours-title">เวลาทำการ</div>
+          <div class="hour-row"><span class="hour-day">จันทร์ – ศุกร์</span><span class="hour-time open">08:00 – 18:00</span></div>
+          <div class="hour-row"><span class="hour-day">เสาร์</span><span class="hour-time open">09:00 – 16:00</span></div>
+          <div class="hour-row"><span class="hour-day">อาทิตย์</span><span class="hour-time" style="color:var(--text-dimmer)">ปิด</span></div>
+          <div class="hour-row"><span class="hour-day">LINE / โทร</span><span class="hour-time open">ตลอด 24 ชม.</span></div>
+        </div>
+
+        <div class="ci-map">
+          <div class="map-placeholder">
+            <div class="map-grid"></div>
+            <div class="map-pin-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          </div>
+          <div class="map-address">กรุงเทพมหานคร · ใกล้ BTS/MRT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <section class="contact-faq">
+    <div class="reveal" style="text-align:center">
+      <div class="section-label" style="justify-content:center">คำถามที่พบบ่อย</div>
+      <h2 class="section-title">มีข้อสงสัย?<br><span class="dim">เราตอบได้ทุกข้อ</span></h2>
+    </div>
+    <div class="faq-cols">
+      <div>
+        <div class="faq-item reveal">
+          <button class="faq-btn">สั่งงานชิ้นเดียวได้ไหม?<div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+          <div class="faq-ans"><div class="faq-ans-inner">ได้เลยครับ รับตั้งแต่ 1 ชิ้น ไม่มีขั้นต่ำ สามารถแจ้งขนาดและปริมาณมาเพื่อรับราคาได้ทันที</div></div>
+        </div>
+        <div class="faq-item reveal rd1">
+          <button class="faq-btn">ระยะเวลาผลิตนานแค่ไหน?<div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+          <div class="faq-ans"><div class="faq-ans-inner">สติ๊กเกอร์และไวนิล 1-3 วันทำการ ป้ายขนาดกลาง 3-5 วัน หากงานด่วนสามารถแจ้งได้ล่วงหน้า</div></div>
+        </div>
+        <div class="faq-item reveal rd2">
+          <button class="faq-btn">ไม่มีไฟล์งาน ทำได้ไหม?<div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+          <div class="faq-ans"><div class="faq-ans-inner">ได้ครับ มีทีมออกแบบพร้อมช่วย แค่แจ้งโจทย์และแนวทาง เราจัดทำ Mockup ให้ดูก่อนผลิตจริง</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="faq-item reveal">
+          <button class="faq-btn">รับงานต่างจังหวัดได้ไหม?<div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+          <div class="faq-ans"><div class="faq-ans-inner">ผลิตแล้วจัดส่งทั่วประเทศได้ครับ งานติดตั้งต่างจังหวัดขึ้นอยู่กับพื้นที่ สอบถามได้เพื่อประเมินค่าใช้จ่าย</div></div>
+        </div>
+        <div class="faq-item reveal rd1">
+          <button class="faq-btn">ไฟล์งานส่งรูปแบบไหน?<div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+          <div class="faq-ans"><div class="faq-ans-inner">รองรับ AI, PDF, PSD ความละเอียด 300 DPI ขึ้นไป สี CMYK เผื่อขอบตัด 3-5 มม. ส่งมาตรวจก่อนได้เลย</div></div>
+        </div>
+        <div class="faq-item reveal rd2">
+          <button class="faq-btn">มีรับประกันคุณภาพไหม?<div class="faq-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+          <div class="faq-ans"><div class="faq-ans-inner">ทุกงานผ่านการตรวจสอบก่อนส่ง หากงานไม่ตรงแบบหรือมีข้อบกพร่องจากฝ่ายเรา เราผลิตใหม่ให้โดยไม่มีค่าใช้จ่าย</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand"><span class="logo">Sign<span>Pro</span></span><p class="footer-brand-desc">ผู้เชี่ยวชาญรับผลิตและติดตั้งป้ายโฆษณาครบวงจร</p></div>
+      <div class="footer-col"><h4>บริการ</h4><ul><li><a onclick="navigate('services')">สติ๊กเกอร์</a></li><li><a onclick="navigate('services')">ป้ายโฆษณา</a></li><li><a onclick="navigate('services')">ไวนิล Inkjet</a></li><li><a onclick="navigate('services')">งานอีเวนต์</a></li></ul></div>
+      <div class="footer-col"><h4>เมนู</h4><ul><li><a onclick="navigate('home')">หน้าแรก</a></li><li><a onclick="navigate('services')">บริการ</a></li><li><a onclick="navigate('about')">เกี่ยวกับเรา</a></li></ul></div>
+      <div class="footer-col"><h4>ติดต่อ</h4><ul><li><a>LINE: @signpro</a></li><li><a>Tel: 02-XXX-XXXX</a></li><li><a>hello@signpro.co.th</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><div class="footer-copy">© 2025 SignPro · All rights reserved.</div><div class="footer-badge"><span class="badge-dot"></span>พร้อมรับงานตลอดเวลา</div></div>
+  </footer>
+</div>
+
+<script src="script.min.js"></script>
+</body>
+</html>
