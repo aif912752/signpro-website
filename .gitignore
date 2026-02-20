@@ -7,8 +7,6 @@ package.json
 # ========== BUILD OUTPUT ==========
 dist/
 build/
-*.min.js
-*.min.css
 *.map
 
 # ========== EDITORS & IDES ==========
