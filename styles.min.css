@@ -69,9 +69,9 @@ h1.hero-h1 .stroke{-webkit-text-stroke:1.5px var(--white);color:transparent;disp
 .trust-text strong{color:var(--white);font-weight:700}
 .hero-visual{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;padding:3rem 2rem;opacity:0;animation:fadeIn .8s .9s forwards}
 .mockup-frame{width:340px;height:240px;background:linear-gradient(135deg,#1a1a1a 0%,#242424 100%);border:2px solid #2a2a2a;border-radius:4px;position:relative;box-shadow:0 0 80px rgba(255,69,0,.18),0 0 160px rgba(255,69,0,.06);display:flex;align-items:center;justify-content:center}
-.mockup-inner{width:88%;height:84%;background:var(--orange);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.mockup-inner{width:88%;height:84%;background:#1a1a1a;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .mockup-inner::before{content:'';position:absolute;top:-40px;right:-40px;width:120px;height:120px;background:rgba(255,255,255,.08);border-radius:50%}
-.mockup-inner::after{content:'';position:absolute;bottom:-20px;left:-20px;width:80px;height:80px;background:rgba(0,0,0,.1);border-radius:50%}
+.mockup-inner::after{content:'';position:absolute;bottom:-20px;left:-20px;width:80px;height:80px;background:rgba(0,0,0,.1);border-radius:50%}.mockup-image{width:100%;height:100%;object-fit:cover;object-position:center}
 .mockup-text{font-family:'Prompt',sans-serif;font-weight:900;font-size:2.4rem;color:#fff;letter-spacing:-1.5px;line-height:1;position:relative;z-index:1}
 .mockup-sub{font-family:'Prompt',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:3px;color:rgba(255,255,255,.6);text-transform:uppercase;margin-top:.3rem;position:relative;z-index:1}
 .glow-bar{position:absolute;background:linear-gradient(90deg,transparent,var(--orange),transparent);opacity:.25;animation:glowpulse 3s infinite}
@@ -160,7 +160,7 @@ h1.hero-h1 .stroke{-webkit-text-stroke:1.5px var(--white);color:transparent;disp
 .sb-feature::before{content:'';width:6px;height:6px;background:var(--orange);border-radius:50%;flex-shrink:0}
 .sb-visual{aspect-ratio:4/3;border-radius:3px;overflow:hidden;position:relative;background:var(--grey);border:1px solid var(--border)}
 .sbv-art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.sbv-art-text{font-family:'Prompt',sans-serif;font-weight:900;color:rgba(255,255,255,.06);letter-spacing:-3px;user-select:0;text-align:center;line-height:.9}
+.sbv-art-text{font-family:'Prompt',sans-serif;font-weight:900;color:rgba(255,255,255,.06);letter-spacing:-3px;user-select:0;text-align:center;line-height:.9}.sbv-img{width:100%;height:100%;object-fit:cover;object-position:center}
 .sbv-badge{position:absolute;bottom:1.2rem;left:1.2rem;background:var(--black);border:1px solid var(--border);padding:.5rem .9rem;border-radius:2px;font-family:'Prompt',sans-serif;font-size:.75rem;font-weight:700;display:flex;align-items:center;gap:.5rem}
 .sbv-badge .bdot{width:6px;height:6px;background:var(--orange);border-radius:50%}
 .svc-pricing{padding:6rem 4rem;background:var(--grey)}
